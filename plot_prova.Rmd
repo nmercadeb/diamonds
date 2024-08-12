@@ -1,0 +1,19 @@
+---
+title: "plot_prova"
+output: html_document
+date: today
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+## Diamonds pot
+```{r plot}
+diamonds |>
+  ggplot(aes(x = x, y = y, color = color)) +
+  geom_point() +
+  facet_wrap(vars(cut))
+```
+
